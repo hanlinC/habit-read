@@ -1,0 +1,15 @@
+# Site settings
+name: HabitRead
+description: A Collection Of Awesome Short Stories
+# baseurl: /habitread
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+exclude:
+- node_modules
+- js
+- gruntfile.js
+- package.json
+- img
+- css

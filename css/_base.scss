@@ -1,0 +1,23 @@
+/*
+  /-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\
+  $Base
+  \-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/
+*/
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  /* you need to set this to assign to the main element a min height of 100% */
+  height: 100%;
+}

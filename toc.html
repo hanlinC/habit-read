@@ -1,0 +1,38 @@
+---
+layout: toc
+title: HabitRead | Table Of Contents
+---
+
+<h1>Table of Contents</h1>
+
+<div style="margin: 0 0.8em;">
+	<table class="table-fill">
+
+		<thead>
+			<tr>
+				<th class="text-left">Title</th>
+				<th class="text-left">Author</th>
+				<th class="text-left table-date">Date</th>
+			</tr>
+		</thead>
+
+		<tbody class="table-hover">
+			{% for post in site.posts %}
+			<tr>
+				<td class="text-left"><a href="{{ site.baseurl }}{{ post.url }}" target="_blank">{{ post.title }}</a></td>
+				<td class="text-left"><a href="{{ post.story-author-site }}" target="_blank">{{ post.story-author }}</a></td>
+				<td class="text-left table-date">{{ post.date | date: "%d %B %Y" }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+
+	</table>
+</div>
+
+<nav class="pagination">
+	<ul>
+		<li>
+			<a href="index.html" class="icon-newer tooltip" title="Latest Posts"></a>
+		</li>
+	</ul>
+</nav>

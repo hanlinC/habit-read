@@ -1,0 +1,18 @@
+{
+  "name": "habitread",
+  "version": "0.1.0",
+  "os": "Built on Ubuntu 14.04 LTS",
+  "description": "A Collection Of Awesome Short Stories",
+  "jsresource": "jBox by Stephan Wagner (https://github.com/StephanWagner/jBox), Modernizr (http://modernizr.com/license/)",
+  "cssresource": "Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/), Secondary Expandable Navigation by CodyHouse (http://codyhouse.co/terms/), Vertical Icon Menu by Codrops (http://tympanus.net/codrops/licensing/), Show More function without JavaScript by David Marland (http://codepen.io/djmarland/), TOC table by alassetter (http://codepen.io/alassetter/)",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-imagemin": "^0.9.1",
+    "grunt-svgmin": "^1.0.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

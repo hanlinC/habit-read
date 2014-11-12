@@ -1,0 +1,59 @@
+---
+layout: story
+title: story title
+story-author: story author
+story-author-site: story author site
+story-image: /dist/img/story-image.jpg
+story-image-alt: story-image-alt
+artwork-author: artwork-author
+artwork-author-site: artwork-author-site
+---
+
+<h1>{{ page.title }}</h1>
+
+<input type="checkbox" class="ml__status" checked id="ml-status" />
+<div class="ml__content">
+
+  <p>“Give me a ride?”</p>
+  <p class="ml__ellipsis">Ben Barclay checked the horse he was driving and looked attentively at the speaker. He was a stout-built, dark-complexioned man, with a beard of a week’s growth, wearing an old and dirty suit, which would have reduced any tailor to despair if taken to him for cleaning and repairs. A loose hat, with a torn crown, surmounted a singularly ill-favored.</p>
+  <p class="ml__hidden">“A tramp, and a hard looking one!” said Ben to himself.</p>
+  <p class="ml__hidden">He hesitated about answering, being naturally reluctant to have such a traveling companion.</p>
+  <p class="ml__hidden">“Well, what do you say?” demanded the tramp rather impatiently. “There’s plenty of room on that seat, and I’m dead tired.”</p>
+  <p class="ml__hidden">“Where are you going?” asked Ben.</p>
+  
+</div>
+
+<label class="ml__button" for="ml-status">
+  <span class="ml__more">show more</span>
+  <span class="ml__sep"> / </span>
+  <span class="ml__less">show less</span>
+</label>
+
+<small>
+	<div class="cite-author-wrapper">
+		&mdash; {{ page.title }} by <cite><a href="{{ page.story-author-site }}" target="_blank" class="cite-author">{{ page.story-author }}</a></cite>
+	</div>
+</small>
+
+<img src="{{ site.baseurl }}{{ page.story-image }}" alt="{{ page.story-image-alt }}" class="story-image">
+
+<small>
+	<div class="cite-artwork-wrapper">
+		&mdash; Artwork by <cite><a href="{{ page.artwork-author-site }}" target="_blank" class="cite-author">{{ page.artwork-author }}</a></cite>
+	</div>
+</small>
+
+<nav class="pagination">
+	<ul>
+		<li>
+			{% if page.next %}
+			<a href="{{ site.baseurl }}{{ page.next.url }}" class="icon-newer tooltip" title="Newer Posts"></a>
+			{% endif %}
+		</li>
+		<li>
+			{% if page.previous %}
+			<a href="{{ site.baseurl }}{{ page.previous.url }}" class="icon-older tooltip" title="Older Posts"></a>
+			{% endif %}
+		</li>
+	</ul>
+</nav>

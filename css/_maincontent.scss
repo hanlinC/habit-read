@@ -1,0 +1,135 @@
+/*
+  /-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\
+  $Main Content
+  \-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/
+*/
+
+.cd-main-content {
+	/* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
+	min-height: 100%;
+	position: relative;
+	background-color: #fff;
+	z-index: $content-zindex;
+  margin: 0 auto;
+  // padding-left: 80px;
+	//we assign a top padding since the header is in position absolute or fixed
+	padding-top: $header-S;
+
+	/* Force Hardware Acceleration in WebKit */
+	-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+
+//	@include transition-property(transform);
+  -webkit-transition-property: -webkit-transform;
+        -moz-transition-property: -moz-transform;
+                  transition-property: transform;
+	@include transition-duration(0.4s);
+
+	&.lateral-menu-is-open {
+		/* translate to show the lateral menu - all content needs to be put in the .cd-main-content to translate*/
+		@include transform(translateX(-260px));
+	}
+//  Below is for max-width not min-width from _layout.scss
+  @media only screen and (max-width: 801px) {
+    padding-left: 0;
+    
+    .vertical-navbar {
+        display: none;
+    }
+  }
+}
+
+.rainbow-dash {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  -webkit-user-select: none;
+          user-select: none;
+
+  @include MQ(M) {
+    top: 0;
+    left: 0;
+  }
+}
+
+article {
+  small {
+    width: 100%;
+    float: right;
+    padding: 10px;
+  }
+
+  .cite-author-wrapper,
+  .cite-artwork-wrapper {
+    float: right;
+  }
+
+  .cite-author {
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  .story-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*
+  /-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\
+  $Show More
+  \-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/
+*/
+
+.ml__button {
+  display: none;
+  text-align: center;
+  border: 2px solid $color-7;
+  padding: 6px 0;
+  margin: 0 auto;
+  width: 155px;
+  color: $color-7;
+  font-weight: 700;
+  @include border-radius(4px);
+}
+
+.ml__status:focus ~ .ml__button, /* this selector is important to indicate focus for keyboard navigation, but the contents vary depending on your design */
+.ml__button:hover {
+  background-color: $color-7;
+  color: $background;
+}
+
+/* This trick ensures we only show the button in browsers that can use it */
+.ml__button:nth-child(n) {
+  display: block;
+  cursor: pointer;
+}
+
+.ml__sep,
+.ml__more,
+.ml__status:checked ~ .ml__button .ml__less  {
+ display: none;
+}
+
+.ml__status,
+.ml__status:checked ~ .ml__content .ml__hidden,
+.ml__status:checked ~ .ml__hidden {
+  /* visually-hidden */
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
+}
+
+.ml__status:checked ~ .ml__button .ml__more {
+  display: inline;
+}
+
+.ml__ellipsis:after {
+  content: "";
+}
+
+.ml__status:checked ~ .ml__content .ml__ellipsis:after {
+ content: "\2026"; /* === &hellip; ISO in CSS content */
+}

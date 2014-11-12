@@ -1,0 +1,64 @@
+/*
+  /-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\
+  $Typography
+  \-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/
+*/
+
+html {font-size: 1em;}
+
+body {
+  background-color: $background;
+  font-family: $primary-font;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  line-height: 1.45;
+  color: $main-text;
+}
+
+p {
+  font-size: 1.3em;
+  width: 50%;
+  margin: 0 auto 1em auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+  width: 81%;
+  margin: 0.5em auto;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+h1 {font-size: 3.157em;}
+h2 {font-size: 2.369em;}
+h3 {font-size: 1.777em;}
+h4 {font-size: 1.333em;}
+small, .font_small {font-size: 0.75em;}
+
+/*When device viewport lesser than 838*/
+@media only screen and (max-width: 838px) {
+  p {
+    font-size: 1.2em;
+    width: 70%;
+  }
+}
+
+/*When device viewport lesser than 424*/
+@media only screen and (max-width: 424px) {
+  h1, h2, h3, h4 {
+    width: 100%;
+  }
+  h1 {font-size: 2.2em;}
+  h2 {font-size: 1.806em;}
+  h3 {font-size: 1.483em;}
+  h4 {font-size: 1.218em;}
+  small, .font_small {font-size: 0.821em;}
+
+  p {width: 91%;}
+}

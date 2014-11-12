@@ -1,0 +1,134 @@
+/*
+  /-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\
+  $Table
+  \-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/\-/
+*/
+
+.table-fill {
+  background-color: $background;
+  @include border-radius(3px);
+  border-collapse: collapse;
+  height: 320px;
+  margin: 35px auto;
+  max-width: 600px;
+  padding: 5px;
+  width: 100%;
+  @include box-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+	-webkit-animation:float 5s infinite;
+	   -moz-animation:float 5s infinite;
+	    -ms-animation:float 5s infinite;
+	     -o-animation:float 5s infinite;
+	        animation:float 5s infinite;
+
+	a {
+		color: #666b85;
+		text-decoration: none;
+
+		&:hover {
+			color: $background;
+		}
+	}
+
+	th {
+	  color: #d5dde5;;
+	  background: #1b1e24;
+	  border-bottom: 4px solid #9ea7af;
+	  border-right: 1px solid #343a45;
+	  font-size: 1.4375em;
+	  font-weight: 100;
+	  padding: 24px;
+	  text-align: left;
+	  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	  vertical-align: middle;
+
+	  &:first-child {
+	  	border-top-left-radius: 3px;
+	  }
+
+	  &:last-child {
+	  	border-top-right-radius: 3px;
+	  	border-right: none;
+	  }
+
+		&:text-left {
+			text-align: left;
+		}
+
+		&:text-center {
+			text-align: center;
+		}
+
+		&:text-right {
+			text-align: right;
+		}
+	}
+
+	tr {
+		border-top: 1px solid #c1c3d1;
+		border-bottom-: 1px solid #c1c3d1;
+		color: #666b85;
+		font-size: 1em;
+		font-weight: normal;
+
+		&:hover td {
+		  background: #4e5066;
+		  color: $background;
+		  border-top: 1px solid #22262e;
+		  border-bottom: 1px solid #22262e;
+		}
+
+		&:first-child {
+			border-top: none;
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&:nth-child(odd) td {
+			background-color: #ebebeb;
+		}
+
+		&:nth-child(odd):hover td {
+			background-color: #4e5066;
+		}
+
+		&:last-child td:first-child {
+			border-bottom-left-radius: 3px;
+		}
+
+		&:last-child td:last-child {
+			border-bottom-right-radius: 3px;
+		}
+	}
+
+	td {
+		background-color: $background;
+		padding: 20px;
+		text-align: left;
+		vertical-align: middle;
+		font-weight: 300;
+		font-size: 1.125em;
+		border-right: 1px solid #c1c3d1;
+
+		&:last-child {
+			border-right: 0px;
+		}
+
+		&:text-left {
+			text-align: left;
+		}
+
+		&:text-center {
+			text-align: center;
+		}
+
+		&:text-right {
+			text-align: right;
+		}
+	}
+
+	@media only screen and (max-width: 390px) {
+		.table-date {display: none;}
+	}
+}

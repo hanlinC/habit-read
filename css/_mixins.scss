@@ -1,0 +1,76 @@
+// rem fallback - credits: http://zerosixthree.se/
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// center vertically and/or horizontally an absolute positioned element
+
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+//    @include transform(translateX(-50%) translateY(-50%));
+    -webkit-transform: translateX(-50%) translateY(-50%);
+       -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+         -o-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+//    @include transform(translateX(-50%));
+    -webkit-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+         -o-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+//    @include transform(translateY(-50%));
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+
+@mixin clearfix() {
+  overflow: hidden;
+  zoom: 1;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+          box-shadow: $value;
+}
+@mixin transition-duration($duration) {
+  -webkit-transition-duration: $duration;
+     -moz-transition-duration: $duration;
+       -o-transition-duration: $duration;
+          transition-duration: $duration;
+}
+@mixin transform($unit) {
+  -webkit-transform: ($unit);
+     -moz-transform: ($unit);
+      -ms-transform: ($unit);
+       -o-transform: ($unit);
+          transform: ($unit);
+}
