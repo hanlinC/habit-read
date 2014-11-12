@@ -1,7 +1,7 @@
 # Site settings
 name: HabitRead
 description: A Collection Of Awesome Short Stories
-# baseurl: /habitread
+baseurl: /habit-read
 
 # Build settings
 markdown: kramdown
