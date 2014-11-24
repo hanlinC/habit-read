@@ -6,3 +6,8 @@ npm install grunt-contrib-imagemin --save-dev
 npm install --save-dev grunt-svgmin
 npm install grunt-contrib-sass --save-dev
 npm install grunt-contrib-watch --save-dev
+npm install --save-dev grunt-shell
+
+open two command line windows/tabs to get it working.
+1. Type "grunt watchpls" into one to run the server.
+2. Type "grunt" into the second one to run the default tasks and watch.

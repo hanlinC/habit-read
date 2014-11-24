@@ -81,11 +81,21 @@ module.exports = function(grunt) {
             }
         },
 
+        shell: {
+            // Shell task configuration goes here.
+            jekyllServe: {
+                command: 'jekyll serve'
+            },
+            jekyllBuild: {
+                command: 'jekyll build'
+            }
+        },
+
         watch: {
             // Watch task configuration goes here.
             scripts: {
                 files: ['js/*.js'],
-                task: ['concat', 'uglify'],
+                task: ['concat', 'uglify', 'shell:jekyllBuild'],
                 options: {
                     spawn: false,
                 }
@@ -93,7 +103,15 @@ module.exports = function(grunt) {
 
             css: {
                 files: ['css/*.scss'],
-                tasks: ['sass'],
+                tasks: ['sass', 'shell:jekyllBuild'],
+                options: {
+                    spawn: false,
+                }
+            },
+
+            site: {
+                files: ['index.html', 'toc.html', 'submit.html', 'about.html', '_includes/*.html', '_layouts/*.html', '_posts/*.{html,md}'],
+                tasks: ['shell:jekyllBuild'],
                 options: {
                     spawn: false,
                 }
@@ -108,13 +126,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-svgmin');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Tell Grunt what to do when we type "grunt watchpls" into the terminal.
-    grunt.registerTask('watchpls', ['watch',]);
+    grunt.registerTask('watchpls', ['shell:jekyllServe',]);
 
     // Tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['clean', 'concat', 'uglify', 'imagemin', 'svgmin', 'sass']);
+    grunt.registerTask('default', ['clean', 'concat', 'uglify', 'imagemin', 'svgmin', 'sass', 'shell:jekyllBuild', 'watch']);
 };
 // HELP
 // http://gruntjs.com/sample-gruntfile

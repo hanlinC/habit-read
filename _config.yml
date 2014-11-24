@@ -13,3 +13,4 @@ exclude:
 - package.json
 - img
 - css
+- commands
