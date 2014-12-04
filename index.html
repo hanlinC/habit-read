@@ -5,4 +5,47 @@ title: HabitRead | A Collection Of Awesome Short Stories
 
 {% assign post = site.posts.first %}
 {% assign content = post.content %}
+
+<h1>{{ post.title }}</h1>
+
+<input type="checkbox" class="ml__status" checked id="ml-status" />
+<div class="ml__content">
+
 {{ content }}
+
+</div>
+
+<label class="ml__button" for="ml-status">
+  <span class="ml__more">show more</span>
+  <span class="ml__sep"> / </span>
+  <span class="ml__less">show less</span>
+</label>
+
+<small>
+	<div class="cite-author-wrapper">
+		&mdash; {{ post.title }} by <cite><a href="{{ post.story-author-site }}" target="_blank" class="cite-author">{{ post.story-author }}</a></cite>
+	</div>
+</small>
+
+<img src="{{ site.baseurl }}{{ post.story-image }}" alt="{{ post.story-image-alt }}" class="story-image">
+
+<small>
+	<div class="cite-artwork-wrapper">
+		&mdash; Artwork by <cite><a href="{{ post.artwork-author-site }}" target="_blank" class="cite-author">{{ post.artwork-author }}</a></cite>
+	</div>
+</small>
+
+<nav class="pagination">
+	<ul>
+		<li>
+			{% if post.next %}
+			<a href="{{ site.baseurl }}{{ post.next.url }}" class="icon-newer tooltip" title="Newer Posts"></a>
+			{% endif %}
+		</li>
+		<li>
+			{% if post.previous %}
+			<a href="{{ site.baseurl }}{{ post.previous.url }}" class="icon-older tooltip" title="Older Posts"></a>
+			{% endif %}
+		</li>
+	</ul>
+</nav>

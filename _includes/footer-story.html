@@ -1,3 +1,40 @@
+</div>
+
+<label class="ml__button" for="ml-status">
+  <span class="ml__more">show more</span>
+  <span class="ml__sep"> / </span>
+  <span class="ml__less">show less</span>
+</label>
+
+<small>
+	<div class="cite-author-wrapper">
+		&mdash; {{ page.title }} by <cite><a href="{{ page.story-author-site }}" target="_blank" class="cite-author">{{ page.story-author }}</a></cite>
+	</div>
+</small>
+
+<img src="{{ site.baseurl }}{{ page.story-image }}" alt="{{ page.story-image-alt }}" class="story-image">
+
+<small>
+	<div class="cite-artwork-wrapper">
+		&mdash; Artwork by <cite><a href="{{ page.artwork-author-site }}" target="_blank" class="cite-author">{{ page.artwork-author }}</a></cite>
+	</div>
+</small>
+
+<nav class="pagination">
+	<ul>
+		<li>
+			{% if page.next %}
+			<a href="{{ site.baseurl }}{{ page.next.url }}" class="icon-newer tooltip" title="Newer Posts"></a>
+			{% endif %}
+		</li>
+		<li>
+			{% if page.previous %}
+			<a href="{{ site.baseurl }}{{ page.previous.url }}" class="icon-older tooltip" title="Older Posts"></a>
+			{% endif %}
+		</li>
+	</ul>
+</nav>
+
 </article>
 
 	<footer>
@@ -24,8 +61,14 @@
 	
 	<!-- JavaScript -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<!-- <script src="js/libs/jBox.min.js"></script> -->
-	<!-- <script src="js/main.js"></script> -->
 	<script src="{{ site.baseurl }}/dist/habitread.min.js"></script>
+	<script>
+	var paragraphs = document.getElementsByTagName("p");
+
+	for (var i = 3, ii = paragraphs.length; i < ii; i += 1) {
+	  paragraphs[2].setAttribute("class", "ml__ellipsis");
+	  paragraphs[i].setAttribute("class", "ml__hidden");
+	}
+	</script>
 </body>
 </html>
